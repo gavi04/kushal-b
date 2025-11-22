@@ -22,7 +22,8 @@ module.exports = [
       origin: [
         'https://anant-feeds-git-main-anandfeeds-projects.vercel.app',
         'https://anant-feeds.vercel.app',
-        'http://localhost:3000'
+        'http://localhost:3000',
+        'https://kushal-f-git-main-gavisohal87-gmailcoms-projects.vercel.app'
       ],
       methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
       headers: ['Content-Type','Authorization','Origin','Accept','X-Requested-With'],
