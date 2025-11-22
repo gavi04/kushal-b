@@ -1,17 +1,29 @@
 module.exports = [
+  'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io'],
+          'media-src': ["'self'", 'data:', 'blob:'],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
   {
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:3000', 'http://localhost:3001'],
-      credentials: true,
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      origin: ['*'], // Change this to your frontend URL for production
+      headers: '*',
     },
   },
   'strapi::poweredBy',
-  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',

@@ -59,3 +59,14 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+**Environment Variables**
+- **`APP_KEYS`**: Comma-separated app keys for signing cookies/sessions. Set secure random values for production.
+- **`ADMIN_JWT_SECRET`**: Secret used for admin JWT tokens. Required in production.
+- **`API_TOKEN_SALT`**, **`TRANSFER_TOKEN_SALT`**: Salts for token generation; set securely.
+- **`DATABASE_CLIENT`**: Which DB to use (`sqlite`, `mysql`, `postgres`). Default: `sqlite`.
+- **`DATABASE_URL`** or **`DATABASE_HOST`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`**: DB connection details.
+- **`DATABASE_FILENAME`**: SQLite DB file path (default: `.tmp/data.db`).
+- **`HOST`**, **`PORT`**: Server bind host and port.
+
+For local development copy `.env.example` to `.env`, adjust values, and restart the server. Keep secrets out of version control and use platform secret stores for production.
