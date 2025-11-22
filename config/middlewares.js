@@ -19,8 +19,14 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['*'], // Change this to your frontend URL for production
-      headers: '*',
+      origin: [
+        'https://anant-feeds-git-main-anandfeeds-projects.vercel.app',
+        'https://anant-feeds.vercel.app',
+        'http://localhost:3000'
+      ],
+      methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+      headers: ['Content-Type','Authorization','Origin','Accept','X-Requested-With'],
+      credentials: true
     },
   },
   'strapi::poweredBy',
